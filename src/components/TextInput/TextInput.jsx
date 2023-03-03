@@ -54,6 +54,7 @@ const TextInput = (props) => {
 
 TextInput.defaultProps = {
   type: "text",
+  value: "",
 };
 
 export { TextInput };

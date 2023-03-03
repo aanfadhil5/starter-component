@@ -1,16 +1,16 @@
 import { useState } from "react";
-import reactLogo from "./assets/react.svg";
 import { Button } from "./components/Button/Button";
+import { ColoredRadio, Radio } from "./components/Radio";
 import { SelectInput } from "./components/Select/Select";
 import { TextInput } from "./components/TextInput";
 
 function App() {
   const [dataForm, setDataForm] = useState({
     name: "",
-    email: "",
-    password: "",
     error: "",
     lang: [],
+    gender: "",
+    color: "",
   });
 
   const checkName = (e) => {
@@ -28,7 +28,7 @@ function App() {
   };
 
   return (
-    <div className="App">
+    <div className="flex flex-col gap-4">
       <pre>{JSON.stringify(dataForm)}</pre>
       <form>
         <TextInput
@@ -37,6 +37,8 @@ function App() {
           error={dataForm?.error}
           onChange={(e) => checkName(e)}
           name="name"
+          placeholder="Enter your name"
+          value={dataForm?.name}
         />
         <SelectInput
           name="lang"
@@ -55,9 +57,29 @@ function App() {
           required
           multiple
         />
-        <Button type="submit" loading={true}>
-          Test
-        </Button>
+        <Radio
+          label="Gender"
+          name="gender"
+          options={[
+            { label: "male", value: "male" },
+            { label: "female", value: "female" },
+          ]}
+          required
+          onChange={(e) => setDataForm({ ...dataForm, gender: e.target.value })}
+          value={dataForm?.gender}
+        />
+        <ColoredRadio
+          label="Colored Radio"
+          name="color"
+          options={[
+            { label: "red", value: "red" },
+            { label: "green", value: "green" },
+            { label: "blue", value: "blue" },
+          ]}
+          required
+          value={dataForm?.color}
+          onChange={(e) => setDataForm({ ...dataForm, color: e.target.value })}
+        />
       </form>
     </div>
   );
