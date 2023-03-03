@@ -1,10 +1,11 @@
 # Personal Starter Component for React + Vite
-This is starter component that i created for my personal use with React. The purpose of this component is to provide a starting pont for building simple UI components.
+This is a starter component created for building simple UI components with React. It uses Vite as a development server, TailwindCSS for styling, and React Select for providing a simple select input.
 
 
 <!-- TechStack -->
 
 ### Tech Stack
+The tech stack used in this starter component includes:
 
   <ul>
     <li><a href="https://reactjs.org/">React.js</a></li>
@@ -32,3 +33,7 @@ Start the development server
   or
   yarn dev
 ```
+### Demo
+You can test the component in action in the following link: https://starter-component.vercel.app/
+
+I hope this helps you get started with building your own UI components with React!
