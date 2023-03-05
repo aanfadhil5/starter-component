@@ -1,8 +1,8 @@
 import { useState } from "react";
-import { Button } from "./components/Button/Button";
-import { ColoredRadio, Radio } from "./components/Radio";
-import { SelectInput } from "./components/Select/Select";
-import { TextInput } from "./components/TextInput";
+import { Button } from "@/components/Button";
+import { ColoredRadio, Radio } from "@/components/Radio";
+import { SelectInput } from "@/components/Select";
+import { TextInput } from "@/components/TextInput";
 
 function App() {
   const initialData = {
@@ -35,10 +35,8 @@ function App() {
 
   return (
     <div className="flex flex-col gap-4">
-      <div className="flex bg-gray-100 p-4 rounded-lg shadow-md sticky top-0 z-10 justify-center">
-        <pre className="text-sm font-mono truncate">
-          {JSON.stringify(dataForm)}
-        </pre>
+      <div className="flex bg-gray-100 p-4 rounded-lg shadow-md sticky top-0 z-10 overflow-x-auto">
+        <pre className="text-sm font-mono">{JSON.stringify(dataForm)}</pre>
       </div>
       <form>
         <div className="my-6 px-4 py-2 border-2 border-x-0">
