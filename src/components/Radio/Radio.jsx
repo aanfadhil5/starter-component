@@ -12,7 +12,7 @@ const Radio = (props) => {
   } = props;
 
   return (
-    <div className="py-2">
+    <div className="p-2 border border-gray-300 rounded-lg">
       <label
         htmlFor={id}
         className="block text-gray-700 text-sm font-medium mb-2 uppercase"
@@ -60,9 +60,9 @@ const ColoredRadio = (props) => {
   } = props;
 
   return (
-    <div className="py-2">
+    <div className="p-2 border border-gray-300 rounded">
       <label
-        className="block text-gray-700 text-sm font-medium mb-2 uppercase"
+        className="block text-gray-700 text-sm font-medium mb-2"
         htmlFor={id}
       >
         {label}
@@ -83,7 +83,7 @@ const ColoredRadio = (props) => {
             />
             <label
               htmlFor={option.value}
-              className="block rounded-lg border cursor-pointer bg-white p-2 text-center peer-checked:bg-blue-500 peer-checked:font-semibold peer-checked:text-white capitalize transition-all duration-200 hover:bg-blue-400 hover:text-white"
+              className="block rounded-lg border cursor-pointer bg-white p-2 text-center peer-checked:bg-blue-500 peer-checked:font-semibold peer-checked:text-white capitalize transition-all duration-200 hover:bg-blue-300 hover:text-white"
             >
               {option.label}
             </label>

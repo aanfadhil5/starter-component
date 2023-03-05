@@ -35,14 +35,14 @@ function App() {
 
   return (
     <div className="flex flex-col gap-4">
-      <div className="flex bg-gray-100 p-4 rounded-lg shadow-md sticky top-0 z-10 overflow-x-auto">
+      <div className="flex bg-gray-100 p-4 rounded-lg shadow-md sticky top-0 z-10 overflow-x-auto sm:justify-center justify-start">
         <pre className="text-sm font-mono">{JSON.stringify(dataForm)}</pre>
       </div>
-      <form>
-        <div className="my-6 px-4 py-2 border-2 border-x-0">
-          <h1 className="text-2xl font-medium text-gray-800">Text Input</h1>
+      <form className="space-y-4 layout">
+        <div className="">
+          <h1 className="text-2xl font-medium text-gray-800">Text Input 📃</h1>
           <hr className="mb-4" />
-          <div className="border p-2">
+          <div className="border border-gray-500 p-2">
             <TextInput
               label="name"
               required
@@ -56,11 +56,13 @@ function App() {
             />
           </div>
         </div>
-        <div className="my-6 px-4 py-2 border-2 border-x-0 flex flex-col gap-2">
-          <h1 className="text-2xl font-medium text-gray-800">Select Input</h1>
-          <hr className="mb-4" />
-          <div className="border p-2">
-            <h2 className="text-lg">Singular Value</h2>
+        <div className="space-y-4">
+          <h1 className="text-2xl font-medium text-gray-800">
+            Select Input 🔽
+          </h1>
+          <hr className="" />
+          <div className="border border-gray-500 p-2">
+            <h2 className="text-sm font-light">Singular Value</h2>
             <SelectInput
               label="Favorite"
               name="favorite"
@@ -76,8 +78,8 @@ function App() {
               }
             />
           </div>
-          <div className="border p-2">
-            <h2 className="text-lg">Multiple Value</h2>
+          <div className="border border-gray-500 p-2">
+            <h2 className="text-sm font-light">Multiple Value</h2>
             <SelectInput
               name="lang"
               onChange={(e) =>
@@ -104,12 +106,11 @@ function App() {
             />
           </div>
         </div>
-        <div className="my-6 px-4 py-2 border-2 border-x-0 flex flex-col gap-2">
-          <h1 className="text-2xl font-medium text-gray-800">Radio</h1>
-          <hr className="mb-4" />
-          <div className="border p-2">
-            <h2 className="text-lg">Normal</h2>
-
+        <div className="space-y-4">
+          <h1 className="text-2xl font-medium text-gray-800">Radio 📻</h1>
+          <hr className="" />
+          <div className="border border-gray-500 p-2">
+            <h2 className="text-sm font-light">Normal</h2>
             <Radio
               label="Gender"
               name="gender"
@@ -124,16 +125,16 @@ function App() {
               value={dataForm?.gender}
             />
           </div>
-          <div className="border p-2">
-            <h2 className="text-lg">Colored</h2>
+          <div className="border border-gray-500 p-2">
+            <h2 className="text-sm font-light">Colored</h2>
 
             <ColoredRadio
-              label="Color"
+              label="Are you attending tonight's event?"
               name="color"
               options={[
-                { label: "red", value: "red" },
-                { label: "green", value: "green" },
-                { label: "blue", value: "blue" },
+                { label: "Yes 👍", value: "yes" },
+                { label: "No 👎", value: "no" },
+                { label: "Maybe 🤔", value: "maybe" },
               ]}
               required
               value={dataForm?.color}
@@ -144,10 +145,10 @@ function App() {
           </div>
         </div>
 
-        <div className="my-6 px-4 py-2 border-2 border-x-0">
-          <h1 className="text-2xl font-medium text-gray-800">Button</h1>
+        <div className="">
+          <h1 className="text-2xl font-medium text-gray-800">Button 🎯</h1>
           <hr className="mb-4" />
-          <div className="border p-2 flex gap-4">
+          <div className="border border-gray-500 p-2 flex gap-4">
             <Button type="submit" onClick={() => console.log(dataForm)}>
               Submit
             </Button>
